@@ -1778,6 +1778,10 @@ textarea:focus {
 .hb-menu nav > ul > li:hover > a::after {
 		color: #ffffff;
 }
+.hb-menu nav > ul > li:hover > a, 
+.hb-menu nav > ul > li:hover > a:hover {
+		color: #ffffff;
+}
 .hb-menu nav > ul > li > a::after {
 	content: "\f107";
 	position: absolute;
