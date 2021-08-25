@@ -1454,9 +1454,23 @@ textarea:focus {
 	background: #fff;
 	border-radius: 5px;
 	border: 1px solid #e1e1e1;
-	min-width: 638px;
+	width: 580px;
 	height: 45px;
 	float: left;
+}
+.hm-searchbox input.search-text{
+	width: 250px;
+}
+.hm-searchbox input.default-checkbox{
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.hm-searchbox label{
+	font-weight: bold;
+	margin-top: 10px;
+	margin-right: 30px;
 }
 .hm-searchbox .nice-select.select-search-category {
 	width: auto;

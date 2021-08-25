@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2021 at 03:54 PM
+-- Generation Time: Aug 25, 2021 at 12:59 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -57,6 +57,28 @@ CREATE TABLE `buy_product` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `stt` int(11) UNSIGNED NOT NULL,
+  `id_buyer` int(11) UNSIGNED NOT NULL,
+  `id_product` int(11) UNSIGNED NOT NULL,
+  `quantity` smallint(5) UNSIGNED NOT NULL,
+  `price` int(11) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`stt`, `id_buyer`, `id_product`, `quantity`, `price`) VALUES
+(6, 3, 3, 2, 10000),
+(8, 3, 3, 5, 10000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `img`
 --
 
@@ -101,7 +123,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `price`, `userid`, `description`, `avt`, `instock`) VALUES
-(3, 'Sản phẩm test', 10000, 7, 'Đây là sản phẩm test', 6, 0),
+(3, 'Sản phẩm test', 10000, 7, 'Đây là sản phẩm test', 6, 3),
 (4, 'Sản phẩm test2', 10000, 7, 'Đây là sản phẩm test2', 13, 0),
 (5, 'Sản phẩm test3', 10000, 7, 'Đây là sản phẩm test3', 9, 0),
 (6, 'Sản phẩm test4', 90000, 7, 'Đây là sản phẩm test4', 11, 0);
@@ -149,6 +171,14 @@ ALTER TABLE `buy_product`
   ADD KEY `FK_BP_USER` (`id_buyer`);
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`stt`,`id_buyer`,`id_product`),
+  ADD KEY `id_buyer` (`id_buyer`),
+  ADD KEY `id_product` (`id_product`);
+
+--
 -- Indexes for table `img`
 --
 ALTER TABLE `img`
@@ -172,6 +202,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `stt` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `img`
@@ -201,6 +237,13 @@ ALTER TABLE `user`
 ALTER TABLE `buy_product`
   ADD CONSTRAINT `FK_BP_PRODUCT` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`),
   ADD CONSTRAINT `FK_BP_USER` FOREIGN KEY (`id_buyer`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_buyer`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
 
 --
 -- Constraints for table `img`
