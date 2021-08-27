@@ -13,6 +13,11 @@ class Home extends CI_Controller {
 		$this->load->view('BestGear_view');
 	}
 
+	function aboutUs()
+	{
+		$this->load->view('AboutUs_view');
+	}
+
 	function setConfigUpload()
 	{
 		$config = array();
@@ -501,7 +506,6 @@ class Home extends CI_Controller {
 			}
 		}
 	}
-
 }
 
 /* End of file User.php */

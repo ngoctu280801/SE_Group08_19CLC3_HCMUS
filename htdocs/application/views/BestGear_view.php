@@ -119,7 +119,7 @@
                             <!-- Begin Header Logo Area -->
                             <div class="col-lg-3">
                                 <div class="logo pb-sm-30 pb-xs-30">
-                                    <a href="index.html">
+                                    <a href="<?php echo base_url(); ?>Home">
                                         <img src="<?php echo base_url(); ?>images/menu/logo/1.jpg" alt="">
                                     </a>
                                 </div>
@@ -249,7 +249,7 @@
                                 <div class="hb-menu hb-menu-2 d-xl-block">
                                     <nav>
                                         <ul>
-                                            <a class ="home" href="index.html">Home</a>
+                                            <a class ="home" href="<?php echo base_url(); ?>Home">Home</a>
                                             <li class="megamenu-holder"><a>Shop</a>
                                                 <ul class="megamenu hb-megamenu">
                                                     <li><a>Shop List</a>
@@ -261,7 +261,7 @@
                                                 </ul>
                                             </li>
                                             
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Home/aboutUs">About Us</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="Shops-product-list.html">Shop Management</a></li>
                                             <!-- Begin Header Bottom Menu Information Area -->
