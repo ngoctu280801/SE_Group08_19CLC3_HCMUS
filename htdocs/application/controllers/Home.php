@@ -100,7 +100,7 @@ class Home extends CI_Controller {
 		}
 		$data = array('product' => $product, 'shop' => $shop, 'img' => $img, 'name' => $name);
 		//$this->load->view('search_view', $data, FALSE);
-		$this->load->view('search_view_test', $data, FALSE);
+		$this->load->view('test_search_view', $data, FALSE);
 	}
 
 	public function Product($id)

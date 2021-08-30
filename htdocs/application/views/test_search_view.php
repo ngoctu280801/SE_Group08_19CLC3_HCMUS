@@ -267,7 +267,7 @@
                                         <!-- single-product-wrap start -->
                                         <div class="single-product-wrap">
                                             <div class="product-image">
-                                                <a href="single-product.html">
+                                                <a href="Product/<?= $product[$i]['id'] ?>">
                                                     <img src="<?= base_url().'uploads/'.$img[$i] ?>">
                                                 </a>
                                                 <span class="sticker">New</span>
