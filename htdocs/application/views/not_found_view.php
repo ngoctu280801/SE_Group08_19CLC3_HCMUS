@@ -74,18 +74,18 @@
                                             <div class="setting ht-setting">
                                                 <ul class="ht-setting-list">
                                                 <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <!-- Begin Login / Logout -->
-                                                    <?php 
-                                                    if(isset($_SESSION['permission_user']) == false){?>
-                                                        <li><a href="Home/toLogin">Sign In</a></li>
-                                                    <?php
-                                                    }
-                                                    else
-                                                    {?>
-                                                        <li><a href="Home/SignOut">Sign Out</a></li>
-                                                    <?php } ?>
-                                                    <!-- End Login / Logout -->
+                                                <li><a href="checkout.html">Checkout</a></li>
+                                                <!-- Begin Login / Logout -->
+                                                <?php 
+                                                if(isset($_SESSION['permission_user']) == false){?>
+                                                    <li><a href="toLogin">Sign In</a></li>
+                                                <?php
+                                                }
+                                                else
+                                                {?>
+                                                    <li><a href="SignOut">Sign Out</a></li>
+                                                <?php } ?>
+                                                <!-- End Login / Logout -->
                                                 </ul>
                                             </div>
                                         </li>
@@ -138,7 +138,7 @@
                             <!-- Begin Header Middle Right Area -->
                             <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                                 <!-- Begin Header Middle Searchbox Area -->
-                                <form action="<?= base_url(); ?>Home/Search" method="post" class="hm-searchbox">
+                                <form action="<?= base_url(); ?>Home/Search" enctype="multipart/form-data" method="post" class="hm-searchbox">
                                     <select class="nice-select select-search-category">
                                         <option value="0">All</option>                         
                                         <option value="10">Laptops</option>                     
