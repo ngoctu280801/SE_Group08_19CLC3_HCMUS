@@ -81,8 +81,6 @@ class Login_register extends CI_Controller {
 		}
 	}
 
-
-
 }
 
 /* End of file Login_register.php */
