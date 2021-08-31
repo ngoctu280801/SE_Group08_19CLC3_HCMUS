@@ -75,7 +75,17 @@
                                                 <ul class="ht-setting-list">
                                                     <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
                                                     <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
+                                                    <!-- Begin Login / Logout -->
+                                                    <?php 
+                                                    if(isset($_SESSION['permission_user']) == false){?>
+                                                        <li><a href="Home/toLogin">Sign In</a></li>
+                                                    <?php
+                                                    }
+                                                    else
+                                                    {?>
+                                                        <li><a href="Home/SignOut">Sign Out</a></li>
+                                                    <?php } ?>
+                                                    <!-- End Login / Logout -->
                                                 </ul>
                                             </div>
                                         </li>
@@ -263,7 +273,7 @@
                                             
                                             <li><a href="<?php echo base_url(); ?>Home/aboutUs">About Us</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="Shops-product-list.html">Shop Management</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Home/ManageProduct">Shop Management</a></li>
                                         </ul>
                                     </nav>
                                 </div>

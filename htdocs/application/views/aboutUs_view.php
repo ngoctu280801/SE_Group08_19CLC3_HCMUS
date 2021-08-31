@@ -73,9 +73,19 @@
                                             <div class="ht-setting-trigger"><span>Setting</span></div>
                                             <div class="setting ht-setting">
                                                 <ul class="ht-setting-list">
-                                                    <li><a href="login-register.html">My Account</a></li>
+                                                    <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
                                                     <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="login-register.html">Sign In</a></li>
+                                                    <!-- Begin Login / Logout -->
+                                                    <?php 
+                                                    if(isset($_SESSION['permission_user']) == false){?>
+                                                        <li><a href="Home/toLogin">Sign In</a></li>
+                                                    <?php
+                                                    }
+                                                    else
+                                                    {?>
+                                                        <li><a href="Home/SignOut">Sign Out</a></li>
+                                                    <?php } ?>
+                                                    <!-- End Login / Logout -->
                                                 </ul>
                                             </div>
                                         </li>
@@ -222,7 +232,7 @@
                                         <!-- Header Middle Wishlist Area End Here -->
                                         <!-- Begin Header Mini Cart Area -->
                                         <li class="hm-minicart">
-                                            <a href="shopping-cart.html">
+                                            <a href="<?= base_url(); ?>Home/cart">
                                                 <span class="item-icon"></span>
                                                 <span class="item-text">£80.00
                                                     <span class="cart-item-count">2</span>
@@ -259,9 +269,9 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="about-us.html">About Us</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Home/aboutUs">About Us</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="Shops-product-list.html">Shop Management</a></li>
+                                            <li><a href="<?php echo base_url(); ?>Home/ManageProduct">Shop Management</a></li>
                                         </ul>
                                     </nav>
                                 </div>
