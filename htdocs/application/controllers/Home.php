@@ -114,7 +114,8 @@ class Home extends CI_Controller {
 		$img = array();
 		$img = $this->product_model->GetAllIDImg($info[0]['id']);
 		$data = array('info' => $info, 'img' => $img);
-		$this->load->view('product_view', $data, FALSE);
+		//$this->load->view('product_view', $data, FALSE);
+		$this->load->view('test_single_product_view', $data, FALSE);
 	}
 
 	public function Shop($id)
