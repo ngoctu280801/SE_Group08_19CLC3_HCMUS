@@ -378,11 +378,11 @@
                                                 <input type='hidden' name='price' value=<?= $info[0]['price'] ?>>
                                                 <div class="quantity">
                                                     <label>Quantity</label>
-                                                    <!-- <input class="cart-plus-minus-box" value="1" type="number" min="1" max =<?= (int)$info[0]['instock'] ?>> -->
                                                     <div class="cart-plus-minus">
-                                                        <input class="cart-plus-minus-box" value="1" type="number" min="1" max =<?= (int)$info[0]['instock'] ?>>
+                                                        <input class="cart-plus-minus-box" value="1" type="number" min="1" max =<?= (int)$info[0]['instock'] ?> required>
                                                         
-                                                        <!-- Khong bik chinh nut tang giam co gioi han -->
+                                                        <!-- Khong bik chinh nut tang giam co max vs min !!!! -->
+
                                                         <!-- <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
                                                         <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div> -->
                                                     </div>
