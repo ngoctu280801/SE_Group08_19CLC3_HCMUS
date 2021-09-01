@@ -265,11 +265,12 @@
                             </div>
 
                             <h4>Product:</h4>
-                            <div class="row">
-                                <div class="product-active owl-carousel">
-                                <?php 
+                            <?php 
                                 if($product)
-                                {
+                                { ?>
+                                <div class="row">
+                                    <div class="product-active owl-carousel">
+                                    <?php
                                     $total = count($product);
                                     for ($i = 0; $i < $total; $i++)
                                     { ?>
@@ -316,23 +317,22 @@
                                         <!-- single-product-wrap end -->
                                     </div>
                                 
-                                <?php 
+                                <?php } ?>
+                                <?php }
+                                    else{
+                                        echo '<p>Not Found any product</p>';
                                     }
-                                }
-                                else{
-                                    echo '<p>Not Found any product</p>';
-                                } 
-                                ?>
-                                
+                                ?>                               
                                 </div>
                         </div>
 
                         <h4>Shop:</h4>
+                        <?php 
+                            if($shop)
+                            {?>
                             <div class="row">
                                 <div class="product-active owl-carousel">
                                 <?php 
-                                if($shop)
-                                {
                                     $total = count($shop);
                                     for ($i = 0; $i < $total; $i++)
                                     { ?>
@@ -365,15 +365,13 @@
                                         <!-- single-product-wrap end -->
                                     </div>
                                 
-                                <?php 
+                                <?php } ?>
+                                <?php }
+                                    else{
+                                        echo '<p>Not Found any shop</p>';
                                     }
-                                }
-                                else{
-                                    echo '<p>Not Found any Shop</p>';
-                                } 
-                                ?>
-                                
-                                </div>
+                                ?>                               
+                            </div>
                         </div>
                         <!-- Li's Section Area End Here -->
                     </div>
