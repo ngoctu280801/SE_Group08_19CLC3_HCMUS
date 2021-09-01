@@ -78,12 +78,12 @@
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
-                                                        <li><a href="Login_register">Sign In</a></li>
+                                                        <li><a href="toLogin">Sign In</a></li>
                                                     <?php
                                                     }
                                                     else
                                                     {?>
-                                                        <li><a href="Home/SignOut">Sign Out</a></li>
+                                                        <li><a href="SignOut">Sign Out</a></li>
                                                     <?php } ?>
                                                     <!-- End Login / Logout -->
                                                 </ul>
@@ -168,7 +168,7 @@
                                         <option value="40">- - - -  Bed &amp; Bath</option>                     
                                         <option value="41">- - - -  Appliances</option>                 
                                         <option value="11">TV &amp; Audio</option>                  
-                                        <option value="42">- -  Chamcham</option>                        
+                                        <option value="42">- -  SamSung</option>                        
                                         <option value="45">- - - -  Office</option>                     
                                         <option value="47">- - - -  Gaming</option>                 
                                         <option value="48">- - - -  Chromebook</option>                     
@@ -176,7 +176,7 @@
                                         <option value="50">- - - -  Touchscreen</option>                        
                                         <option value="51">- - - -  Ultrabooks</option>                     
                                         <option value="52">- - - -  Blouses</option>                        
-                                        <option value="43">- -  Meito</option>                        
+                                        <option value="43">- -  Toshiba</option>                        
                                         <option value="53">- - - -  Hard Drives</option>                        
                                         <option value="54">- - - -  Graphic Cards</option>                      
                                         <option value="55">- - - -  Processors (CPU)</option>  
@@ -199,7 +199,7 @@
                                         <option value="71">- - - -  7.0 Screen</option>                     
                                         <option value="72">- - - -  9.0 Screen</option>                     
                                         <option value="73">- - - -  Bags &amp; Cases</option>                   
-                                        <option value="67">- -  XailStation</option>                     
+                                        <option value="67">- -  Camcorders</option>                     
                                         <option value="74">- - - -  Batteries</option>                      
                                         <option value="75">- - - -  Microphones</option>                        
                                         <option value="76">- - - -  Stabilizers</option>                        
@@ -301,88 +301,56 @@
                     <div class="breadcrumb-content">
                         <ul>
                             <li><a href="<?php echo base_url(); ?>Home">Home</a></li>
-                            <li class="active">Login Register</li>
+                            <li class="active">Shop's products list</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <!-- Li's Breadcrumb Area End Here -->
             <!-- Begin Login Content Area -->
-            <div class="page-section mb-60">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
-                            <!-- Login Form s-->
-                            <form action="Login_register/Login" method="post" enctype="multipart/form-data">
-                                <div class="card">
-                                    <h4 class="login-title">Login</h4>
-                                    <div class="card-block">
-                                        <fieldset class="form-group">
-                                            <label for="usernameText">Username:</label>
-                                            <input name="username" type="text" class="form-control" id="usernameView"
-                                            placeholder="Enter username">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="passwordText">Password:</label>
-                                            <input name="password" type="password" class="form-control" id="passwordView"
-                                            placeholder="Enter password">
-                                        </fieldset>
-                                        <input type="submit" class="btn btn-success btn-dark" value="Login">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                            <form action="Login_register/Register" method="post" enctype="multipart/form-data">
-                                <div class="card">
-                                    <h4 class="login-title">Register</h4>
-                                    <div class="card-block">
-                                        <fieldset class="form-group">
-                                            <label for="usernameText">Username:</label>
-                                            <input name="username" type="text" class="form-control" id="usernameView"
-                                            placeholder="Enter username">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="passwordText">Password:</label>
-                                            <input name="password" type="password" class="form-control" id="passwordView"
-                                            placeholder="Enter password">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="passwordText1">Password:</label>
-                                            <input name="password1" type="password" class="form-control" id="passwordView1"
-                                            placeholder="Re-Enter password">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="nameText">Your Name:</label>
-                                            <input name="name" type="text" class="form-control" id="nameView"
-                                            placeholder="Enter your name">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="addrText">Your Address:</label>
-                                            <input name="addr" type="text" class="form-control" id="addrView"
-                                            placeholder="Enter your Adress">
-                                        </fieldset>
-                                        <fieldset class="form-group">
-                                            <label for="phoneText">Your Phone number:</label>
-                                            <input name="phonenum" type="text" class="form-control" id="phoneView"
-                                            placeholder="Enter your phone number">
-                                        </fieldset>
-                                        <p>Select your plan:</p>
-                                        <fieldset class="radio-group">
-                                            <input type="radio" id="buyer" name="plan" value="1" checked="checked">
-                                            <label for="buyer">Buyer</label><br>
-                                        </fieldset>
-                                        <fieldset class="radio-group">
-                                            <input type="radio" id="seller" name="plan" value="2">
-                                            <label for="seller">Seller</label><br>
-                                        </fieldset>
-            
-                                        <input type="submit" class="btn btn-success btn-dark" value="Register">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+            <div class="shop-information">
+                <h2>Shop information</h2>
+                <div class="shop-information-container">
+                    <img src="<?php echo base_url(); ?>images/store.jpg">
+                    <p><?= $this->session->userdata('username'); ?></p>
+                    <p>Followers: 300</p>
+                    <ul class="shop-information-rating">
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star-half"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="shops-products-list">
+                <h2>Product</h2>
+                <button class="shop-information-add-button"><a href="toAddProduct">Add new product</button></a>
+                <div class="shops-products-list-container">
+                    <ul class="shops-products-list-all">
+                        <?php 
+                        $total = count($info);
+                        for ($i = 0; $i < $total; $i++) { ?>
+                        <li class="shops-products-list-single">
+                            <ul>
+                                <li><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Product Icon"></li>
+                                <li><a href="Product/<?= $info[$i]['id'] ?>"><?= $info[$i]['name'] ?></a></li>
+                                <li><?= $info[$i]['price'] ?>VNĐ</li>
+                                <li input type="button" onclick="location.href='ChangeProductInfo/<?= $info[$i]['id'] ?>'"><i class="fa fa-edit"></i></li>
+                                <li input type="button" onclick="return deleteProduct()"><i class="fa fa-trash"></i></li>
+                                    <script type="text/javascript">
+                                        function deleteProduct()
+                                        {
+                                            if(confirm("Are you sure want to delete this product ?"))
+                                            {
+                                                return location.href='DeleteProduct/<?= $info[$i]['id'] ?>';
+                                            }
+                                        }
+                                    </script>
+                            </ul> 
+                        </li>
+                        <?php } ?>
+                    </ul>
                 </div>
             </div>
             <!-- Login Content Area End Here -->

@@ -323,21 +323,14 @@
                                                 <img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product image">
                                             </a>
                                         </div>
-                                    <?php } ?>
-                                    <!-- <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="<?php echo base_url(); ?>images/product/large-size/2.jpg" data-gall="myGallery">
-                                            <img src="<?php echo base_url(); ?>images/product/large-size/2.jpg" alt="product image">
-                                        </a>
-                                    </div> -->
-                                    
+                                    <?php } ?>                                    
                                 </div>
-                                    <div class="product-details-thumbs slider-thumbs-1">
-                                        <?php 
-                                        $total = count($img);
-                                        for ($i = 0; $i < $total; $i++) { ?>                                     
+                                <div class="product-details-thumbs slider-thumbs-1">
+                                    <?php 
+                                    $total = count($img);
+                                    for ($i = 0; $i < $total; $i++) { ?>                                     
                                         <div class="sm-image"><img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product image thumb"></div>
-                                        <!-- <div class="sm-image"><img src="<?php echo base_url(); ?>images/product/small-size/2.jpg" alt="product image thumb"></div>-->
-                                        <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <!--// Product Details Left -->

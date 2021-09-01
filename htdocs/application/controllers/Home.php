@@ -220,7 +220,8 @@ class Home extends CI_Controller {
 
 			
 			$data = array('info' => $info, 'img' => $img);
-			$this->load->view('manage_product_view', $data, FALSE);
+			// $this->load->view('manage_product_view', $data, FALSE);
+			$this->load->view('test_manage_product_view', $data, FALSE);
 		}
 	}
 
