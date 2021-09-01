@@ -3752,10 +3752,12 @@ thead {
 /* 6.5 Li's Login Register
 /*----------------------------------------*/
 .login-title {
+	text-align: center;
 	font-size: 20px;
 	line-height: 23px;
 	text-transform: capitalize;
 	font-weight: 700;
+	margin-top: 20px;
 	margin-bottom: 30px;
 }
 .login-form {
@@ -3872,40 +3874,6 @@ thead {
 }
 .register-button:hover {
 	background: #fed700;
-}
-
-.form-group label{
-	margin-top: 10px;
-	margin-bottom: 10px;
-	font-weight: bold;
-	color: #000;
-	margin-left: 30px;
-}
-.form-group input{
-	margin: 0, auto;
-	width: 500px;
-	margin-left: 30px;
-	margin-right: 30px;
-}
-.form-group ::placeholder{
-	color: rgba(0, 0, 0, 0.295);
-}
-.radio-group label{
-	font-weight: bold;
-	margin-left: 50px;
-}
-.radio-group input[type=radio] {
-	border: 0px;
-	width: 50%;
-	height: 2em;
-	margin-right: 150px;
-	float: right;
-}
-.radio-group{
-	margin-bottom: 30px;
-}
-.card-block p{
-	margin-left: 30px;
 }
 /*----------------------------------------*/
 /* 	6.6 Li's Shopping Cart
@@ -5453,6 +5421,85 @@ span.required {
 .shop-information-add-button a{
 	color: white;
 	font-family: 'Rubik', sans-serif;
+}
+/*----------------------------------------*/
+/*----------------------------------------*/
+/* 7.3 Edit product Page
+/*----------------------------------------*/
+.edit-product{
+	margin: 0 auto;
+	padding: 30px 0 100px;
+	width: 1000px;
+	height: 1800px;
+	text-align: center;
+}
+.edit-product h3{
+	margin-bottom: 30px;
+	margin-top: 50px;
+}
+.detail{
+	display: flex;
+	margin: 20px
+}
+.detail p{
+	float: left;
+	font-weight: bold;
+	font-size: 110%;
+	width: 20%;
+	padding-top: 10px;
+	color: #000;
+	align-items:initial;
+}
+
+.edit-product form button{
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgb(51, 50, 42);
+	border: 1px solid rgb(51, 50, 42);
+	margin-top: 30px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: 0.3s all;
+	cursor: pointer;
+}
+.edit-product form button:hover{
+	background-color: rgb(0, 0, 0);
+}
+.edit-product-container{
+	border: groove;
+	border-radius: 7px;
+}
+.image-product-images-list{
+	border: groove;
+	border-radius: 7px;
+	height: 250px;
+}
+.image-product-images-single{
+	margin-left: 20px;
+	border: groove;
+	float: left;
+}
+.image-product-container li {
+	margin-top: 4px;
+}
+.image-product-container li input{
+	width: 25px;
+}
+.image-product-container li label{
+	display: block;
+}
+.image-product-container button{
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+	background-color: rgb(51, 50, 42);
+	border: 1px solid rgb(51, 50, 42);
+	margin-top: 30px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: 0.3s all;
+	cursor: pointer;
 }
 /*----------------------------------------*/
 /*----------------------------------------------------------------------------------------------------*/

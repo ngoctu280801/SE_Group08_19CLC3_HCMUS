@@ -7,9 +7,30 @@ if (isset($_SESSION['permission_user']) == false) {
 	}
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
+	<script type="text/javascript">
+	function UpdateCost() {
+		var productInfo = <?php echo json_encode($product); ?>;
+		var sum = 0;
+		var total = <?php Print(count($product)); ?>;
+		var elem;
+		for (i=0; i<total; i++) {
+			elem = document.getElementById(i);
+			var price_i = productInfo[elem.value]['quantity']*productInfo[elem.value]['price'];
+			if (elem.checked == true) { 
+				
+				sum += Number(price_i); 
+			}
+		}
+		document.getElementById('totalcost' ).value = sum;
+		
+		
+	}
+	//window.onload=UpdateCost()
+	</script>
 	<meta charset="utf-8">
 	<title>YOUR CART</title>
 	<script type="text/javascript" src="<?php echo base_url(); ?>vendor/bootstrap.js"></script>
@@ -19,12 +40,14 @@ if (isset($_SESSION['permission_user']) == false) {
  	<link rel="stylesheet" href="<?php echo base_url(); ?>1.css">
 </head>
 <body>
+	
 	<div class="container">
 		<h2 class="text-xl-center"><a href="<?= base_url(); ?>/Home">Return Home</a></h2>
 	</div>
 	<div class="alert alert-success" role ="alert">
 		<b><?= $this->session->userdata('username'); ?>, permission: <?= $this->session->userdata('permission_user'); ?>, id: <?= $this->session->userdata('id_user'); ?></b>
 	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-7" style="text-align:center;">Product</div>
@@ -41,6 +64,13 @@ if (isset($_SESSION['permission_user']) == false) {
 			for ($i = 0; $i < $total; $i++) { ?>
 				<div class="container">
 					<div class="row">
+						<div class="col-sm-1">
+
+							<input type="checkbox" id="<?= $i ?>" name="<?= $i ?>" value="<?= $i ?>" onclick="UpdateCost()">
+					
+								
+						</div>
+
 						<div class="col-sm-2">
 
 							<img class="card-img-top img-fluid" src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Card image cap">
@@ -48,7 +78,7 @@ if (isset($_SESSION['permission_user']) == false) {
 								
 						</div>
 						
-						<div class="col-sm-5" >
+						<div class="col-sm-4" >
 							<h4 class="card-title product_name"><a href="Product/<?= $product[$i]['id_product'] ?>"><?= $product[$i]['name'] ?></a></h4>
 						</div>
 
@@ -77,10 +107,11 @@ if (isset($_SESSION['permission_user']) == false) {
 			echo '<h4>You do not have any product</h4>';
 		} ?>
 
-
-
-
-			
+		<div class="row">
+			<h4>Total Price: </h4>
+			<input type="text" name="totalcost" id="totalcost" value="0" disabled style="text-align:center;">
+		</div>
+	
 	</div>
 	
 </body>
