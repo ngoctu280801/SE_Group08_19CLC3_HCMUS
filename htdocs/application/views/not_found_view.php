@@ -73,19 +73,19 @@
                                             <div class="ht-setting-trigger"><span>Setting</span></div>
                                             <div class="setting ht-setting">
                                                 <ul class="ht-setting-list">
-                                                <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <!-- Begin Login / Logout -->
-                                                <?php 
-                                                if(isset($_SESSION['permission_user']) == false){?>
-                                                    <li><a href="toLogin">Sign In</a></li>
-                                                <?php
-                                                }
-                                                else
-                                                {?>
-                                                    <li><a href="SignOut">Sign Out</a></li>
-                                                <?php } ?>
-                                                <!-- End Login / Logout -->
+                                                    <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
+                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <!-- Begin Login / Logout -->
+                                                    <?php 
+                                                    if(isset($_SESSION['permission_user']) == false){?>
+                                                        <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
+                                                    <?php
+                                                    }
+                                                    else
+                                                    {?>
+                                                        <li><a href="<?= base_url(); ?>Home/SignOut">Sign Out</a></li>
+                                                    <?php } ?>
+                                                    <!-- End Login / Logout -->
                                                 </ul>
                                             </div>
                                         </li>

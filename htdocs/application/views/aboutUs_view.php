@@ -78,12 +78,12 @@
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
-                                                        <li><a href="toLogin">Sign In</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
                                                     <?php
                                                     }
                                                     else
                                                     {?>
-                                                        <li><a href="SignOut">Sign Out</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/SignOut">Sign Out</a></li>
                                                     <?php } ?>
                                                     <!-- End Login / Logout -->
                                                 </ul>
@@ -211,12 +211,12 @@
                                         <option value="15">Smartwatch</option>                           
                                         <option value="16">Accessories</option>
                                     </select>
-                                    <input type="text" class="search-text" placeholder="Enter your search key ...">
-                                    <button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
-                                    <input type="checkbox" class="default-checkbox" name="shopsearch" value="">
-                                    <label for="shopsearch">Shop</label>
-                                    <input type="checkbox" class="default-checkbox" name="productsearch" value="">
-                                    <label for="productsearch">Product</label>
+                                    <input type="text" name="name" class="search-text" placeholder="Enter your search key ...">
+                                    <input type="checkbox" class="default-checkbox" name="ticked[]" value="shop">
+                                    <label for="shopText">Shop</label>
+                                    <input type="checkbox" class="default-checkbox" name="ticked[]" value="product" checked="checked">
+                                    <label for="productText">Product</label>
+                                    <button class="li-btn" type="submit" value="Search"><i class="fa fa-search"></i></button>
                                 </form>
                                 <!-- Header Middle Searchbox Area End Here -->
                                 <!-- Begin Header Middle Right Area -->

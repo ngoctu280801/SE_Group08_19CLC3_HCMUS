@@ -78,12 +78,12 @@
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
-                                                        <li><a href="toLogin">Sign In</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
                                                     <?php
                                                     }
                                                     else
                                                     {?>
-                                                        <li><a href="SignOut">Sign Out</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/SignOut">Sign Out</a></li>
                                                     <?php } ?>
                                                     <!-- End Login / Logout -->
                                                 </ul>

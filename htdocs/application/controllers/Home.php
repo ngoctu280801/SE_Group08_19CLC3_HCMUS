@@ -99,8 +99,7 @@ class Home extends CI_Controller {
 			}
 		}
 		$data = array('product' => $product, 'shop' => $shop, 'img' => $img, 'name' => $name);
-		//$this->load->view('search_view', $data, FALSE);
-		$this->load->view('test_search_view', $data, FALSE);
+		$this->load->view('search_view', $data, FALSE);
 	}
 
 	public function Product($id)
@@ -217,11 +216,8 @@ class Home extends CI_Controller {
 				$img[] = $this->product_model->GetImgProduct($value['avt']);
 			}
 
-
-			
 			$data = array('info' => $info, 'img' => $img);
-			// $this->load->view('manage_product_view', $data, FALSE);
-			$this->load->view('test_manage_product_view', $data, FALSE);
+			$this->load->view('manage_product_view', $data, FALSE);
 		}
 	}
 

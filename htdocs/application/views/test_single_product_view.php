@@ -78,12 +78,12 @@
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
-                                                        <li><a href="toLogin">Sign In</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
                                                     <?php
                                                     }
                                                     else
                                                     {?>
-                                                        <li><a href="SignOut">Sign Out</a></li>
+                                                        <li><a href="<?= base_url(); ?>Home/SignOut">Sign Out</a></li>
                                                     <?php } ?>
                                                     <!-- End Login / Logout -->
                                                 </ul>
@@ -382,7 +382,7 @@
                                                 <div class="quantity">
                                                     <label>Quantity</label>
                                                     <div class="cart-plus-minus">
-                                                        <input class="cart-plus-minus-box" value="1" type="number" min="1" max =<?= (int)$info[0]['instock'] ?> required>
+                                                        <input class="cart-plus-minus-box" type='number' name='quantity' value=1 min="1" max =<?= (int)$info[0]['instock'] ?> required>
                                                         
                                                         <!-- Khong bik chinh nut tang giam co max vs min !!!! -->
 
