@@ -234,10 +234,7 @@
                                         <li class="hm-minicart">
                                             <a href="<?= base_url(); ?>Home/cart">
                                                 <span class="item-icon"></span>
-                                                <span class="item-text">£80.00
-                                                    <span class="cart-item-count">2</span>
-                                                </span>
-                                                <span></span>
+                                                <span class="item-text">VNĐ
                                             </a>
                                         </li>
                                         <!-- Header Mini Cart Area End Here -->

@@ -113,8 +113,8 @@ class Home extends CI_Controller {
 		$img = array();
 		$img = $this->product_model->GetAllIDImg($info[0]['id']);
 		$data = array('info' => $info, 'img' => $img);
-		//$this->load->view('product_view', $data, FALSE);
-		$this->load->view('test_single_product_view', $data, FALSE);
+		
+		$this->load->view('product_view', $data, FALSE);
 	}
 
 	public function Shop($id)
@@ -421,12 +421,16 @@ class Home extends CI_Controller {
 			$this->load->model('cart_model');
 			$product = $this->cart_model->getProducts($this->session->userdata('id_user'));
 			$this->load->model('product_model');
-			if($product){
-				foreach ($product as $value) {
-					$img[] = $this->product_model->GetImgProduct($value['avt']);
-				}
+			if(!$product){
+				echo "<script type='text/javascript'>alert('No product in cart');</script>";
+				redirect('/Home','refresh');
+				return;
+			}
+			foreach ($product as $value) {
+				$img[] = $this->product_model->GetImgProduct($value['avt']);
 			}
 			$data = array('product' => $product, 'img' => $img);
+			
 			$this->load->view('cart_view', $data, FALSE);
 		}
 	}
@@ -470,11 +474,11 @@ class Home extends CI_Controller {
 			$this->load->model('cart_model');
 			if($this->cart_model->addToCart($id_buyer, $id_product, $quantity, $price)){
 				echo "<script type='text/javascript'>alert('Add product to cart Successfully');</script>";
-				redirect('/Home','refresh');
+				redirect('/Home/Product/'.$id_product,'refresh');
 			}
 			else{
 				echo "<script type='text/javascript'>alert('Failed to Add product to cart');</script>";
-				redirect('/Home','refresh');
+				redirect('/Home/Product/'.$id_product,'refresh');
 			}
 		}
 	}
@@ -497,11 +501,11 @@ class Home extends CI_Controller {
 			$this->load->model('cart_model');
 			if($this->cart_model->delFromCart($stt, $id_buyer, $id_product)){
 				echo "<script type='text/javascript'>alert('Delete Successfully');</script>";
-				redirect('/Home','refresh');
+				redirect('/Home/cart','refresh');
 			}
 			else{
 				echo "<script type='text/javascript'>alert('Error to delete product from cart. Please try again');</script>";
-				redirect('/Home','refresh');
+				redirect('/Home/cart','refresh');
 			}
 		}
 	}
