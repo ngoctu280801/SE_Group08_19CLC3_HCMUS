@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Home Version Two || limupa - Digital Products Store ECommerce Bootstrap 4 Template</title>
+        <title>Search Result</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -74,7 +74,15 @@
                                             <div class="setting ht-setting">
                                                 <ul class="ht-setting-list">
                                                     <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <?php 
+                                                    if($this->session->userdata('permission_user') == '2' || isset($_SESSION['permission_user']) == false){?>
+                                                        
+                                                    <?php
+                                                    }
+                                                    else
+                                                    {?>
+                                                        <li><a href="checkout.html">Checkout</a></li>
+                                                    <?php } ?>
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
@@ -223,20 +231,28 @@
                                 <div class="header-middle-right">
                                     <ul class="hm-menu">
                                         <!-- Begin Header Middle Wishlist Area -->
-                                        <li class="hm-wishlist">
-                                            <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count">0</span>
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                        </li>
+                                        
                                         <!-- Header Middle Wishlist Area End Here -->
                                         <!-- Begin Header Mini Cart Area -->
-                                        <li class="hm-minicart">
+                                        <?php 
+                                        if($this->session->userdata('permission_user') == '2'){?>                  
+                                        <?php
+                                        }
+                                        else
+                                        {?>
+                                            <li class="hm-wishlist">
+                                                <a href="wishlist.html">
+                                                    <span class="cart-item-count wishlist-item-count">0</span>
+                                                    <i class="fa fa-heart-o"></i>
+                                                </a>
+                                            </li>
+                                            <li class="hm-minicart">
                                             <a href="<?= base_url(); ?>Home/cart">
                                                 <span class="item-icon"></span>
                                                 <span class="item-text">VNĐ
                                             </a>
                                         </li>
+                                        <?php } ?>
                                         <!-- Header Mini Cart Area End Here -->
                                     </ul>
                                 </div>
@@ -276,7 +292,7 @@
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="Product/<?= $product[$i]['id'] ?>">
-                                                    <img src="<?= base_url().'uploads/'.$img[$i] ?>">
+                                                    <img src="<?= base_url().'uploads/'.$img[$i] ?>" style = "width:211.75px; height:132.34px">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>

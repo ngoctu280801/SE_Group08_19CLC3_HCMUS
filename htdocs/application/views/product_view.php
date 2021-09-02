@@ -74,7 +74,15 @@
                                             <div class="setting ht-setting">
                                                 <ul class="ht-setting-list">
                                                     <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
+                                                    <?php 
+                                                    if($this->session->userdata('permission_user') == '2' || isset($_SESSION['permission_user']) == false){?>
+                                                        
+                                                    <?php
+                                                    }
+                                                    else
+                                                    {?>
+                                                        <li><a href="checkout.html">Checkout</a></li>
+                                                    <?php } ?>
                                                     <!-- Begin Login / Logout -->
                                                     <?php 
                                                     if(isset($_SESSION['permission_user']) == false){?>
@@ -223,20 +231,28 @@
                                 <div class="header-middle-right">
                                     <ul class="hm-menu">
                                         <!-- Begin Header Middle Wishlist Area -->
-                                        <li class="hm-wishlist">
-                                            <a href="wishlist.html">
-                                                <span class="cart-item-count wishlist-item-count">0</span>
-                                                <i class="fa fa-heart-o"></i>
-                                            </a>
-                                        </li>
+                                       
                                         <!-- Header Middle Wishlist Area End Here -->
                                         <!-- Begin Header Mini Cart Area -->
-                                        <li class="hm-minicart">
+                                        <?php 
+                                        if($this->session->userdata('permission_user') == '2'){?>                  
+                                        <?php
+                                        }
+                                        else
+                                        {?>
+                                            <li class="hm-wishlist">
+                                                <a href="wishlist.html">
+                                                    <span class="cart-item-count wishlist-item-count">0</span>
+                                                    <i class="fa fa-heart-o"></i>
+                                                </a>
+                                            </li>
+                                            <li class="hm-minicart">
                                             <a href="<?= base_url(); ?>Home/cart">
                                                 <span class="item-icon"></span>
                                                 <span class="item-text">VNĐ
                                             </a>
                                         </li>
+                                        <?php } ?>
                                         <!-- Header Mini Cart Area End Here -->
                                     </ul>
                                 </div>
@@ -270,7 +286,15 @@
                                             
                                             <li><a href="<?php echo base_url(); ?>Home/aboutUs">About Us</a></li>
                                             <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="<?php echo base_url(); ?>Home/ManageProduct">Shop Management</a></li>
+                                            <?php 
+                                            if($this->session->userdata('permission_user') != '2' || isset($_SESSION['permission_user']) == false){?>
+                                                
+                                            <?php
+                                            }
+                                            else
+                                            {?>
+                                                <li><a href="<?php echo base_url(); ?>Home/ManageProduct">Shop Management</a></li>
+                                            <?php } ?>
                                         </ul>
                                     </nav>
                                 </div>
