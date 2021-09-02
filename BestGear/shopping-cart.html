@@ -313,10 +313,64 @@
                                                 <th class="li-product-price">Unit Price</th>
                                                 <th class="li-product-quantity">Quantity</th>
                                                 <th class="li-product-subtotal">Total</th>
+                                                <th class="li-product-checkbox">Choose</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="tblShoppingCart">
-                                            
+                                        <tbody>
+                                            <tr>
+                                                <td class="li-product-remove">
+                                                    <form id="my_form" action="" enctype="" method="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <a type="submit"><i class="fa fa-times"></i></a>
+                                                        <!-- Cái thẻ a ở trên xài không được thì xài cái dưới thử xem, không được nữa thì chỉnh y như demo nó sẽ hiện ra nút delete bình thường -->
+                                                        <!-- <a href="javascript:{}" onclick="document.getElementById('my_form').submit();"><i class="fa fa-times"></i></a> -->
+                                                    </form>
+                                                </td>
+                                                <td class="li-product-thumbnail"><a href="#"><img src="images/product/small-size/5.jpg" alt="Li's Product Image"></a></td>
+                                                <td class="li-product-name"><a href="#">Accusantium dolorem1</a></td>
+                                                <td class="li-product-price"><span class="amount">$46.80</span></td>
+                                                <td class="quantity">
+                                                    <label>Quantity</label>
+                                                    <div class="cart-plus-minus">
+                                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">$70.00</span></td>
+                                                <td class="li-product-checkbox"><input type="checkbox" id="" name="" value=""></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="li-product-remove">
+                                                    <form id="my_form" action="" enctype="" method="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <input type='hidden' name='' value="">
+                                                        <!-- <a type="submit"><i class="fa fa-times"></i></a> -->
+                                                        <!-- Cái thẻ a ở trên xài không được thì xài cái dưới thử xem, không được nữa thì chỉnh y như demo nó sẽ hiện ra nút delete bình thường -->
+                                                        <!-- <a href="javascript:{}" onclick="document.getElementById('my_form').submit();"><i class="fa fa-times"></i></a> -->
+                                                    </form>
+                                                </td>
+                                                <td class="li-product-thumbnail"><a href="#"><img src="images/product/small-size/6.jpg" alt="Li's Product Image"></a></td>
+                                                <td class="li-product-name"><a href="#">Mug Today is a good day</a></td>
+                                                <td class="li-product-price"><span class="amount">$71.80</span></td>
+                                                <td class="quantity">
+                                                    <label>Quantity</label>
+                                                    <div class="cart-plus-minus">
+                                                        <input class="cart-plus-minus-box" value="1" type="text">
+                                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal"><span class="amount">$60.50</span>
+                                                <td class="li-product-checkbox"><input type="checkbox" id="" name="" value=""></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -622,8 +676,6 @@
         <script src="js/scrollUp.min.js"></script>
         <!-- Main/Activator js -->
         <script src="js/main.js"></script>
-        <script src="js/SanPham.js"></script>
-        <script src="js/shopping-cart.js"></script>
     </body>
 
 <!-- shopping-cart31:32-->
