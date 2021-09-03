@@ -324,9 +324,17 @@ class Home extends CI_Controller {
 			$img = array();
 
 			$img = $this->product_model->GetAllIDImg($info[0]['id']);
-
+			$img_thumb = array();
+			$total = count($img);
+			if($img){
+				for ($i = 0; $i < $total; $i++) {
+				 	$filename = $img[$i]['name'];
+					$path = pathinfo('uploads/'.$filename);
+					$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
+				}
+			}
 			
-			$data = array('info' => $info, 'img' => $img);
+			$data = array('info' => $info, 'img' => $img, 'img_thumb' => $img_thumb);
 			$this->load->view('edit_product_view', $data, FALSE);
 		}	
 	}
