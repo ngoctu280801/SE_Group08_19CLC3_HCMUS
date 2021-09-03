@@ -30,9 +30,25 @@ class cart_model extends CI_Model {
 		$connection = mysqli_connect("localhost", "root", "", "qlbh");
 		// Neu ket noi thanh cong
 		if (!$connection->connect_error) {
-			$sql = "delete from cart where stt = '%s' and id_buyer = '%s' and '%s'";
+			$sql = "delete from cart where stt = '%s' and id_buyer = '%s' and id_product = '%s'";
 			// Xy ly cau truy van de tranh van de SQL Injection
 			$sql = sprintf($sql, $connection->real_escape_string($stt), $connection->real_escape_string($id_buyer), $connection->real_escape_string($id_product));
+			if(mysqli_query($connection, $sql)){
+				return true;
+			}	
+		}
+		return false;
+	}
+
+	public function del_DeletedProduct($id_product)
+	{
+		// Ket noi database
+		$connection = mysqli_connect("localhost", "root", "", "qlbh");
+		// Neu ket noi thanh cong
+		if (!$connection->connect_error) {
+			$sql = "delete from cart where id_product = '%s'";
+			// Xy ly cau truy van de tranh van de SQL Injection
+			$sql = sprintf($sql, $connection->real_escape_string($id_product));
 			if(mysqli_query($connection, $sql)){
 				return true;
 			}	
