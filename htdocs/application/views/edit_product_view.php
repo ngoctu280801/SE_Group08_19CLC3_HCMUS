@@ -78,7 +78,7 @@
                             ?>
 
                             <li class="image-product-images-single">
-                                <img src="<?= base_url().'uploads/'.$img_thumb[$i] ?>" alt="product-image" width="150" height = "90">
+                                <img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product-image" width="150" height = "90">
                                 <label for="imgText">Select:</label>
                                 <input type="checkbox" name="ticked[]" value="<?= $img[$i]['id'] ?>">
                             </li>
@@ -99,7 +99,7 @@
                             $total = count($img);
                             for ($i = 0; $i < $total; $i++) { ?>
                             <li class="image-product-images-single">
-                                <img src="<?= base_url().'uploads/'.$img_thumb[$i] ?>" alt="product-image" width="150" height = "90">
+                                <img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product-image" width="150" height = "90">
                                 <label for="imgText">Select:</label>
                                 <input type="radio" name="avt" value="<?= $img[$i]['id'] ?>" 
                                     <?php 

@@ -53,26 +53,35 @@ class Home extends CI_Controller {
 	        $str_name[] = $dataInfo[$i]['file_name'];
 
 	        // Create Resized image
-	        $configResize = $this->setConfigResize($dataInfo[$i]['file_name']);
-	    	$this->load->library('image_lib', $configResize);
-	    	$this->image_lib->initialize($configResize);
-			$this->image_lib->resize();
+	        //$configResize = $this->setConfigResize($dataInfo[$i]['file_name']);
+	    	//$this->load->library('image_lib', $configResize);
+	    	//$this->image_lib->initialize($configResize);
+	    	//$this->load->library('image_lib');
+			//$configResize = $this->setConfigResize($dataInfo[$i]['file_name']);
+			//$this->image_lib->initialize($configResize);
+			//if ( ! $this->image_lib->resize())
+			//{
+			//    echo $this->image_lib->display_errors('<p>', '</p>');
+			//    die();
+			//}
+			//$this->image_lib->clear();
+	    	
 	    }
 	    
 	    
 	    return $str_name;
 	}
 
-	public function setConfigResize($image_name)
-	{
-		$config['image_library'] = 'gd2';
-		$config['source_image'] = './uploads/'.$image_name;
-		$config['create_thumb'] = TRUE;
-		$config['maintain_ratio'] = TRUE;
-		$config['width']         = 150;
-		$config['height']       = 94;
-		return $config;
-	}
+	// function setConfigResize($image_name)
+	// {
+	// 	$config['image_library'] = 'gd2';
+	// 	$config['source_image'] = 'uploads/'.$image_name;
+	// 	$config['create_thumb'] = TRUE;
+	// 	$config['maintain_ratio'] = TRUE;
+	// 	$config['width']         = 150;
+	// 	$config['height']       = 94;
+	// 	return $config;
+	// }
 
 	public function toLogin()
 	{
@@ -98,7 +107,7 @@ class Home extends CI_Controller {
 		}
 		$product = array();
 		$shop = array();
-		$img_thumb = array();
+		$img = array();
 		foreach ($ticked as $value) {
 			if($value == 'product'){
 				$this->load->model('product_model');
@@ -106,9 +115,8 @@ class Home extends CI_Controller {
 
 				if($product){
 					foreach ($product as $value) {
-						$filename = $this->product_model->GetImgProduct($value['avt']);
-						$path = pathinfo('uploads/'.$filename);
-						$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
+						$img[] = $this->product_model->GetImgProduct($value['avt']);
+						
 					}
 				}
 				
@@ -120,7 +128,7 @@ class Home extends CI_Controller {
 			}
 		}
 		
-		$data = array('product' => $product, 'shop' => $shop, 'img' => $img_thumb, 'name' => $name);
+		$data = array('product' => $product, 'shop' => $shop, 'img' => $img, 'name' => $name);
 		$this->load->view('search_view', $data, FALSE);
 	}
 
@@ -135,16 +143,7 @@ class Home extends CI_Controller {
 
 		$img = array();
 		$img = $this->product_model->GetAllIDImg($info[0]['id']);
-		$img_thumb = array();
-		$total = count($img);
-		if($img){
-			for ($i = 0; $i < $total; $i++) {
-			 	$filename = $img[$i]['name'];
-				$path = pathinfo('uploads/'.$filename);
-				$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
-			}
-		}
-		$data = array('info' => $info, 'img' => $img, 'img_thumb' => $img_thumb);
+		$data = array('info' => $info, 'img' => $img);
 		
 		$this->load->view('product_view', $data, FALSE);
 	}
@@ -160,17 +159,16 @@ class Home extends CI_Controller {
 		$this->load->model('product_model');
 		$info_product = array();
 		$info_product = $this->product_model->GetAllProduct($id);
-		$img_thumb = array();
+		$img = array();
 		if ($info_product){
 			foreach ($info_product as $value) {
-				$filename = $this->product_model->GetImgProduct($value['avt']);
-				$path = pathinfo('uploads/'.$filename);
-				$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
+				$img[] = $this->product_model->GetImgProduct($value['avt']);
+				
 			}
 		}
 
 		
-		$data = array('info' => $info, 'info_product' => $info_product, 'img' => $img_thumb);
+		$data = array('info' => $info, 'info_product' => $info_product, 'img' => $img);
 		$this->load->view('shop_view', $data, FALSE);
 	}
 
@@ -249,9 +247,7 @@ class Home extends CI_Controller {
 			$img = array();
 			if($info){
 				foreach ($info as $value) {
-					$filename = $this->product_model->GetImgProduct($value['avt']);
-					$path = pathinfo('uploads/'.$filename);
-					$img[] = $path['filename'].'_thumb.'.$path['extension'];
+					$img[] = $this->product_model->GetImgProduct($value['avt']);
 				}
 			}
 			$data = array('info' => $info, 'img' => $img);
@@ -324,17 +320,8 @@ class Home extends CI_Controller {
 			$img = array();
 
 			$img = $this->product_model->GetAllIDImg($info[0]['id']);
-			$img_thumb = array();
-			$total = count($img);
-			if($img){
-				for ($i = 0; $i < $total; $i++) {
-				 	$filename = $img[$i]['name'];
-					$path = pathinfo('uploads/'.$filename);
-					$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
-				}
-			}
-			
-			$data = array('info' => $info, 'img' => $img, 'img_thumb' => $img_thumb);
+						
+			$data = array('info' => $info, 'img' => $img);
 			$this->load->view('edit_product_view', $data, FALSE);
 		}	
 	}
@@ -367,7 +354,7 @@ class Home extends CI_Controller {
 		# unlink original img
 		unlink("uploads/".$path['basename']);
 		# unlink resized img
-		unlink("uploads/".$path['filename'].'_thumb.'.$path['extension']);
+		//unlink("uploads/".$path['filename'].'_thumb.'.$path['extension']);
 	}
 
 	public function DelProductImg()
@@ -479,7 +466,7 @@ class Home extends CI_Controller {
 		}
 		else{
 			$product = array();
-			$img_thumb = array();
+			$img = array();
 			$this->load->model('cart_model');
 			$product = $this->cart_model->getProducts($this->session->userdata('id_user'));
 			$this->load->model('product_model');
@@ -489,11 +476,9 @@ class Home extends CI_Controller {
 				return;
 			}
 			foreach ($product as $value) {
-				$filename = $this->product_model->GetImgProduct($value['avt']);
-				$path = pathinfo('uploads/'.$filename);
-				$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
+				$img[] = $this->product_model->GetImgProduct($value['avt']);
 			}
-			$data = array('product' => $product, 'img' => $img_thumb);
+			$data = array('product' => $product, 'img' => $img);
 			
 			$this->load->view('cart_view', $data, FALSE);
 		}

@@ -79,7 +79,7 @@
                                                     <input type='submit' class='btn btn-success btn-dark' value='Delete'>
                                                 </form>
                                             </td>
-                                            <td class="li-product-thumbnail"><a href="Product/<?= $product[$i]['id_product'] ?>"><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Li's Product Image" style="width:240px height:150px"></a></td>
+                                            <td class="li-product-thumbnail"><a href="Product/<?= $product[$i]['id_product'] ?>"><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Li's Product Image" style="width:240px"></a></td>
                                             <td class="li-product-name"><a href="Product/<?= $product[$i]['id_product'] ?>"><?= $product[$i]['name'] ?></a></td>
                                             <td class="li-product-price"><span class="amount"><?= $product[$i]['price'] ?>VNĐ</span></td>
                                             <td class="li-product-price"><?= $product[$i]['quantity'] ?></td>
