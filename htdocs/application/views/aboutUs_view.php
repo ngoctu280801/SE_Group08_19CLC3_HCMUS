@@ -332,11 +332,17 @@
                     <div class="row">
                         <!-- About Text Start -->
                         <div class="col-lg-6 order-last order-lg-first">
-                            <div class="about-text-wrap">
-                                <h2><span>Provide Best</span>Product For You</h2>
-                                <p>We provide the best Beard oile all over the world. We are the worldd best store in indi for Beard Oil. You can buy our product without any hegitation because they truste us and buy our product without any hagitation because they belive and always happy buy our product.</p>
-                                <p>Some of our customer say’s that they trust us and buy our product without any hagitation because they belive us and always happy to buy our product.</p>
-                                <p>We provide the beshat they trusted us and buy our product without any hagitation because they belive us and always happy to buy.</p>
+                        <div class="about-text-wrap">
+                                <h2><span>Product For You</span>BEST GEAR</h2>
+                                <p>This is our "Introduction to Software Engineering" course project. We are from class 19CLC3, led by lecturer Nguyen Thi Minh Tuyen Giang, and practicing instructors are Mai Anh Tuan, Ho Tuan Thanh. Thanks to the enthusiastic support of the teachers, we were able to complete this project.</p>
+                                <p>Website "Best Gear" is an e-commerce site, exchanging technology products between buyers and sellers. Website has the main functions such as: product listing, product search, add to cart, ....</p>
+                                <p>Hope you will have a pleasant experience with our website, if you have any questions, please contact the personal facebook below,...</p>
+                                <h4>Group Member</h4>
+                                <p>Nguyen Bao Duy - 19127376 </p>
+                                  <p>Vu Tuan Hai - 19127387</p> 
+                                   <p>Nguyen Tran Ngoc Tu - 19127610</p> 
+                                   <p>Do Dinh Van - 19127624 </p>
+                                
                             </div>
                         </div>
                         <!-- About Text End -->
