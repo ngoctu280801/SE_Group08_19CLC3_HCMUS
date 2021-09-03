@@ -57,7 +57,7 @@
                         for ($i = 0; $i < $total; $i++) { ?>
                         <li class="shops-products-list-single">
                             <ul>
-                                <li><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Product Icon" width='150' height='150'></li>
+                                <li><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Product Icon" ></li>
                                 <li><a href="Product/<?= $info[$i]['id'] ?>"><?= $info[$i]['name'] ?></a></li>
                                 <li><?= $info[$i]['price'] ?>VNĐ</li>
                                 <li input type="button" onclick="location.href='ChangeProductInfo/<?= $info[$i]['id'] ?>'"><i class="fa fa-edit"></i></li>

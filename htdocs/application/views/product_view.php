@@ -51,7 +51,7 @@
                                 <?php 
                                 $total = count($img);
                                 for ($i = 0; $i < $total; $i++) { ?>                                     
-                                    <div class="sm-image"><img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product image thumb"></div>
+                                    <div class="sm-image"><img src="<?= base_url().'uploads/'.$img_thumb[$i] ?>" alt="product image thumb"></div>
                                 <?php } ?>
                             </div>
                         </div>
