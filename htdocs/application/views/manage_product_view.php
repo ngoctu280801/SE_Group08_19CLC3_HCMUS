@@ -50,7 +50,7 @@
         <div class="shops-products-list">
             <h2>Product</h2>
             <button class="shop-information-add-button"><a href="toAddProduct">Add new product</button></a>
-            <div class="shops-products-list-container">
+            <div class="table-content table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -72,7 +72,7 @@
                             <td class="li-product-thumbnail"><a href="Product/<?= $info[$i]['id'] ?>"><img src="<?= base_url().'uploads/'.$img[$i] ?>" alt="Li's Product Image" style="width:150px;height:150px;"></a></td>
                             <td class="li-product-name"><a href="Product/<?= $info[$i]['id'] ?>"><?= $info[$i]['name'] ?></a></td>
                             <td class="li-product-price"><span class="amount" style="font-weight:bold"><?= $info[$i]['price'] ?>VNĐ</span></td>
-                            <td class="quantity" style="font-weight:bold"><?= $info[$i]['instock'] ?></td>
+                            <td class="quantity"><span style="font-weight:bold"><?= $info[$i]['instock'] ?></span></td>
                             <td class="li-product-edit"><i class="fa fa-edit" onclick="location.href='ChangeProductInfo/<?= $info[$i]['id'] ?>'"></i></td>
                             <td class="li-product-remove"><i class="fa fa-trash" onclick="return deleteProduct(<?= $info[$i]['id'] ?>)"></i></td>
                         </tr>

@@ -3362,6 +3362,9 @@ li.right-menu .cat-mega-menu-2 > li {
 	text-align: center;
 	width: 100%;
 	margin-bottom: 0;
+	margin: 0 auto;
+	width: 1000px;
+	background-color: white;
 }
 .table-content table th,
 .table-content table td {
@@ -5091,6 +5094,23 @@ span.required {
 	padding: 10px 0 5px;
 	font-size: 13px;
 	color: #000;
+}
+.li-product-name a{
+	font-size: 18px;
+}
+.li-product-price span{
+	font-size: 18px;
+}
+.quantity span{
+	font-size: 18px;
+}
+.li-product-edit i{
+	font-size: 20px;
+	cursor: pointer;
+}
+.li-product-remove i{
+	font-size: 20px;
+	cursor: pointer;
 }
 .feedback-area .br-theme-fontawesome-stars .br-widget a {
 	font-size: 14px;

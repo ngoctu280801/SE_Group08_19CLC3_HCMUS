@@ -42,7 +42,7 @@
                                 for ($i = 0; $i < $total; $i++) { ?>
                                     <div class="lg-image">
                                         <a class="popup-img venobox vbox-item" href="<?= base_url().'uploads/'.$img[$i]['name'] ?>" data-gall="myGallery">
-                                            <img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product image">
+                                            <img src="<?= base_url().'uploads/'.$img[$i]['name'] ?>" alt="product image" style="width:453px; height:370px">
                                         </a>
                                     </div>
                                 <?php } ?>                                    
@@ -51,7 +51,7 @@
                                 <?php 
                                 $total = count($img);
                                 for ($i = 0; $i < $total; $i++) { ?>                                     
-                                    <div class="sm-image"><img src="<?= base_url().'uploads/'.$img_thumb[$i] ?>" alt="product image thumb"></div>
+                                    <div class="sm-image"><img src="<?= base_url().'uploads/'.$img_thumb[$i] ?>" alt="product image thumb" style="width:114px; height:114px"></div>
                                 <?php } ?>
                             </div>
                         </div>
