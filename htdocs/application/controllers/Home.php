@@ -632,6 +632,11 @@ class Home extends CI_Controller {
 			}
 		}
 	}
+
+	public function YourOrder()
+	{
+		$this->load->view('place_order_view');
+	}
 }
 
 /* End of file User.php */

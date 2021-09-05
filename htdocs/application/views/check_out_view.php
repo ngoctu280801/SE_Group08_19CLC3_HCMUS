@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="<?= base_url(); ?>Home/CheckOut" enctype="multipart/form-data" method="post">
+                    <form action="<?= base_url(); ?>Home/YourOrder" enctype="multipart/form-data" method="post">
                         <div class="row">
                             <div class="col-lg-6 col-12">
                                 <form action="#">
@@ -78,8 +78,8 @@
                                             
                                             <div class="col-md-12">
                                                 <div class="checkout-form-list">
-                                                    <label>Full name</label>
-                                                    <input placeholder="" type="text"require>
+                                                    <label>Full name <span class="required">*</span></label>
+                                                    <input placeholder="" type="text" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -166,15 +166,15 @@
                                               <div class="card">
                                                 <div class="card-header" id="#payment-2">
                                                   <h5 class="panel-title">
-                                                    <input type="radio" name="paymentmethods">
+                                                    <input type="radio" name="paymentmethods" checked>
                                                     <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                      Cheque Payment
+                                                      COD (Cash On Delivery)
                                                     </a>
                                                   </h5>
                                                 </div>
                                                 <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                                   <div class="card-body">
-                                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                                    <p>(COD) is a type of transaction where the recipient pays for a good at the time of delivery rather than using credit. The terms and accepted forms of payment vary according to the payment provisions of the purchase agreement..</p>
                                                   </div>
                                                 </div>
                                               </div>
