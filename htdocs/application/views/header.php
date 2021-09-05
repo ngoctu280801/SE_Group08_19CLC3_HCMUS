@@ -33,10 +33,7 @@
                                         else
                                         {?>
                                             <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>
-                                            <?php
-                                            if($this->session->userdata('permission_user') == '1'){ ?>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                            <?php } ?>
+                                            
                                             <li><a href="<?= base_url(); ?>Home/SignOut">Sign Out</a></li>
                                         <?php } ?>
                                         <!-- End Login / Logout -->

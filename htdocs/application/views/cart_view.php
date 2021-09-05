@@ -9,14 +9,19 @@
 		var sum = 0;
 		var total = <?php Print(count($product)); ?>;
 		var elem;
+        var selectedproduct = '';
+        document.getElementById('processbutton' ).disabled = true;
 		for (i=0; i<total; i++) {
 			elem = document.getElementById(i);
-			var price_i = productInfo[elem.value]['quantity']*productInfo[elem.value]['price'];
 			if (elem.checked == true) { 
-				sum += Number(price_i); 
+				sum += Number(productInfo[i]['quantity']*productInfo[i]['price']); 
+                selectedproduct = selectedproduct.concat( ' ',i);
+                document.getElementById('processbutton' ).disabled = false;
 			}
 		}
 		document.getElementById('totalcost' ).value = sum;
+        document.getElementById('products' ).value = selectedproduct;
+
 	}
 	</script>
 
@@ -83,7 +88,9 @@
                                             <td class="li-product-name"><a href="Product/<?= $product[$i]['id_product'] ?>"><?= $product[$i]['name'] ?></a></td>
                                             <td class="li-product-price"><span class="amount"><?= $product[$i]['price'] ?>VNĐ</span></td>
                                             <td class="li-product-price"><?= $product[$i]['quantity'] ?></td>
-                                            <td class="li-product-checkbox"><input type="checkbox" id="<?= $i ?>" name="<?= $i ?>" value="<?= $i ?>" onclick="UpdateCost()"></td>
+                                            <td class="li-product-checkbox">
+                                                <input type="checkbox" id="<?= $i ?>" name="ticked[]" value="<?= $i ?>" onclick="UpdateCost()">
+                                            </td>
                                         </tr>
                                         <?php } }
                                         else{
@@ -108,11 +115,20 @@
                         <div class="row">
                             <div class="col-md-5 ml-auto">
                                 <div class="cart-page-total">
+
+                                    <form action="<?= base_url(); ?>home/CheckOut" method="post" enctype="multipart/form-data">
                                     <h2>Total (VNĐ)</h2>
                                     <ul>
                                         <input type="text" name="totalcost" id="totalcost" value="0" disabled>
+                                        <?php 
+                                        if ($product){ ?>
+                                            <input type="hidden" name="products" id="products" value="-1" readonly>
+
+                                        <?php } ?>
                                     </ul>
-                                    <a href="#">Proceed to checkout</a>
+                                    <button type="submit" id="processbutton" disabled>Proceed to checkout</button>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>

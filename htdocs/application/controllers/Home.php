@@ -471,6 +471,12 @@ class Home extends CI_Controller {
 		}
 	}
 
+	function getProductsInCart()
+	{
+		$this->load->model('cart_model');
+		return $this->cart_model->getProducts($this->session->userdata('id_user'));
+	}
+
 	public function cart()
 	{
 		if(isset($_SESSION['id_user']) == false){
@@ -482,8 +488,8 @@ class Home extends CI_Controller {
 		else{
 			$product = array();
 			$img_thumb = array();
-			$this->load->model('cart_model');
-			$product = $this->cart_model->getProducts($this->session->userdata('id_user'));
+			
+			$product = $this->getProductsInCart();
 			$this->load->model('product_model');
 			if(!$product){
 				echo "<script type='text/javascript'>alert('No product in cart');</script>";
@@ -555,9 +561,11 @@ class Home extends CI_Controller {
 	{
 		if(isset($_SESSION['id_user']) == false){
 			redirect('/login_register','refresh');
+			return;
 		}
 		else if($this->session->userdata('permission_user') != '1'){
 			$this->load->view('not_found_view');
+			return;
 		}
 		$id_buyer = $this->input->post('id_buyer');
 		$id_product = $this->input->post('id_product');
@@ -574,6 +582,53 @@ class Home extends CI_Controller {
 			else{
 				echo "<script type='text/javascript'>alert('Error to delete product from cart. Please try again');</script>";
 				redirect('/Home/cart','refresh');
+			}
+		}
+	}
+
+	public function CheckOut()
+	{
+
+		if(isset($_SESSION['id_user']) == false){
+			redirect('/login_register','refresh');
+		}
+		else if($this->session->userdata('permission_user') != '1'){
+			$this->load->view('not_found_view');
+		}
+		else{
+			$selected = $this->input->post('products');
+			$product = array();			
+			$product = $this->getProductsInCart();
+			$totalcost = 0;
+			if ($product){
+				$products_checkout = array();
+				$splited = explode(' ', $selected);
+				foreach ($splited as $AProduct) {
+					if ($AProduct != ''){
+					    if ((int)$AProduct >= 0 and (int)$AProduct < count($product)){
+					    	$products_checkout[] = $product[(int)$AProduct];
+					    	$totalcost += $product[(int)$AProduct]['quantity'] * $product[(int)$AProduct]['price'];
+					    }
+					    else{
+					    	echo "<script type='text/javascript'>alert('Error to check tick products. Please tick products that you want to buy again');</script>";
+							redirect('/Home','refresh');
+							return;
+					    }
+					}
+				}
+				if(count($products_checkout) != 0){
+			    	$data = array('products' => $products_checkout, 'totalcost' => $totalcost);		
+					$this->load->view('check_out_view', $data, FALSE);
+				}
+				else{
+					echo "<script type='text/javascript'>alert('You need to tick products that you want to buy in your cart firstly');</script>";
+					redirect('/Home','refresh');
+					return;
+				}
+			}
+			else{
+				echo "<script type='text/javascript'>alert('No product in cart');</script>";
+				redirect('/Home','refresh');
 			}
 		}
 	}
