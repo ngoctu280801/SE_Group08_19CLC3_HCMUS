@@ -126,7 +126,8 @@
 
                                         <?php } ?>
                                     </ul>
-                                    <button type="submit" id="processbutton" disabled>Proceed to checkout</button>
+                                    
+                                    <input type='submit' class='btn btn-success btn-dark' id="processbutton" disabled value='Proceed to checkout'>
                                     </form>
 
                                 </div>
