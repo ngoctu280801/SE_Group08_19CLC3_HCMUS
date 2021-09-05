@@ -149,18 +149,13 @@
                                         <div class="payment-accordion">
                                             <div id="accordion">
                                               <div class="card">
-                                                <div class="card-header" id="#payment-1">
-                                                  <form >  
+                                                <div class="card-header" id="#payment-1">  
                                                   <h5 class="panel-title">
-                                                  
+                                                    <input type="radio" name="paymentmethods">
                                                     <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                       Direct Bank Transfer.
-                                                      
                                                     </a>
-                                                    <input type="radio">
-                                                    
                                                   </h5>
-                                                  </form>
                                                 </div>
                                                 <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                                   <div class="card-body">
@@ -171,6 +166,7 @@
                                               <div class="card">
                                                 <div class="card-header" id="#payment-2">
                                                   <h5 class="panel-title">
+                                                    <input type="radio" name="paymentmethods">
                                                     <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                                       Cheque Payment
                                                     </a>
@@ -185,6 +181,7 @@
                                               <div class="card">
                                                 <div class="card-header" id="#payment-3">
                                                   <h5 class="panel-title">
+                                                    <input type="radio" name="paymentmethods">
                                                     <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                                       PayPal
                                                     </a>
@@ -196,17 +193,6 @@
                                                   </div>
                                                 </div>
                                               </div>
-                                              <form>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio" checked>Direct Bank Transfer.
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio"> Cheque Payment
-                                                </label>
-                                                <label class="radio-inline">
-                                                    <input type="radio" name="optradio">  PayPal
-                                                </label>
-                                                 </form>
                                             </div>
                                             <div class="order-button-payment">
                                                 <input value="Place order" type="submit">
