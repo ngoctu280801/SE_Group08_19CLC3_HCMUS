@@ -37,7 +37,7 @@
                     <div class="col-lg-6 order-last order-lg-first">
                     <div class="about-text-wrap">
                             <h2><span>Product For You</span>BEST GEAR</h2>
-                            <p>This is our "Introduction to Software Engineering" course project. We are from class 19CLC3, led by lecturer Nguyen Thi Minh Tuyen Giang, and practicing instructors are Mai Anh Tuan, Ho Tuan Thanh. Thanks to the enthusiastic support of the teachers, we were able to complete this project.</p>
+                            <p>This is our "Introduction to Software Engineering" course project. We are from class 19CLC3, led by lecturer Nguyen Thi Minh Tuyen, and practicing instructors are Mai Anh Tuan, Ho Tuan Thanh. Thanks to the enthusiastic support of the teachers, we were able to complete this project.</p>
                             <p>Website "Best Gear" is an e-commerce site, exchanging technology products between buyers and sellers. Website has the main functions such as: product listing, product search, add to cart, ....</p>
                             <p>Hope you will have a pleasant experience with our website, if you have any questions, please contact the personal facebook below,...</p>
                             <h4>Group Member</h4>

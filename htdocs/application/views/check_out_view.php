@@ -66,7 +66,7 @@
                                                 <div class="country-select clearfix">
                                                     <label>Country <span class="required">*</span></label>
                                                     <select class="nice-select wide">
-                                                      <option data-display="Bangladesh">Bangladesh</option>
+                                                      <option data-display="Vietnam">Vietnam</option>
                                                       <option value="uk">London</option>
                                                       <option value="rou">Romania</option>
                                                       <option value="fr">French</option>
@@ -75,22 +75,11 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list">
-                                                    <label>First Name <span class="required">*</span></label>
-                                                    <input placeholder="" type="text" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list">
-                                                    <label>Last Name <span class="required">*</span></label>
-                                                    <input placeholder="" type="text" required>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="col-md-12">
                                                 <div class="checkout-form-list">
-                                                    <label>Company Name</label>
-                                                    <input placeholder="" type="text">
+                                                    <label>Full name</label>
+                                                    <input placeholder="" type="text"require>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -99,29 +88,9 @@
                                                     <input placeholder="Street address" type="text" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list">
-                                                    <input placeholder="Apartment, suite, unit etc. (optional)" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="checkout-form-list">
-                                                    <label>Town / City <span class="required">*</span></label>
-                                                    <input type="text" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list">
-                                                    <label>State / County <span class="required">*</span></label>
-                                                    <input placeholder="" type="text" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="checkout-form-list">
-                                                    <label>Postcode / Zip <span class="required">*</span></label>
-                                                    <input placeholder="" type="text" required>
-                                                </div>
-                                            </div>
+                                            
+                                            
+                                            
                                             <div class="col-md-6">
                                                 <div class="checkout-form-list">
                                                     <label>Email Address <span class="required">*</span></label>
@@ -181,11 +150,17 @@
                                             <div id="accordion">
                                               <div class="card">
                                                 <div class="card-header" id="#payment-1">
+                                                  <form >  
                                                   <h5 class="panel-title">
+                                                  
                                                     <a class="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                       Direct Bank Transfer.
+                                                      
                                                     </a>
+                                                    <input type="radio">
+                                                    
                                                   </h5>
+                                                  </form>
                                                 </div>
                                                 <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                                   <div class="card-body">
@@ -221,6 +196,17 @@
                                                   </div>
                                                 </div>
                                               </div>
+                                              <form>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio" checked>Direct Bank Transfer.
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio"> Cheque Payment
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="optradio">  PayPal
+                                                </label>
+                                                 </form>
                                             </div>
                                             <div class="order-button-payment">
                                                 <input value="Place order" type="submit">
