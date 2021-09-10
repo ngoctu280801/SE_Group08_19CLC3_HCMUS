@@ -40,13 +40,13 @@
                         <input name="name" type="text" value="<?= $info[0]['name'] ?>" placeholder="Enter product's name" required></div>
                     <div class="detail">
                         <p class="detail-title">Price(VNĐ)</p>
-                        <input name="price" type="text" value="<?= $info[0]['price'] ?>" placeholder="Enter product's price" required></div>
+                        <input name="price" type="number" value="<?= $info[0]['price'] ?>" placeholder="Enter product's price" required min=1></div>
                     <div class="detail">
                         <p class="detail-title">Description</p>
                         <input name="des" type="text" value="<?= $info[0]['description'] ?>" placeholder="Description of product" required></div>
                     <div class="detail">
                         <p class="detail-title">In stock</p>
-                        <input name="instock" type="text" value="<?= $info[0]['instock'] ?>" placeholder="Available products" required></div>
+                        <input name="instock" type="number" value="<?= $info[0]['instock'] ?>" placeholder="Available products" required min=0></div>
                     
                     <p><button type="submit" value="Save">Save</button></p>
                 </form>

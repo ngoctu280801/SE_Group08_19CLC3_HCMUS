@@ -33,9 +33,9 @@
             <form action="<?= base_url(); ?>/home/AddProduct" method="post" enctype="multipart/form-data">
                 <div class="detail"><p class="detail-title">Upload picture</p><input type="file" name="userfile[]" multiple="multiple" placeholder="Choose Files" required></div>
                 <div class="detail"><p class="detail-title">Name</p><input name="name" type="text" placeholder="Enter product's name" required></div>
-                <div class="detail"><p class="detail-title">Price(VND)</p><input name="price" type="text" placeholder="Enter product's price" required></div>
+                <div class="detail"><p class="detail-title">Price(VND)</p><input name="price" type="number" placeholder="Enter product's price" required min=1></div>
                 <div class="detail"><p class="detail-title">Description</p><input name="des" type="text" placeholder="Product description" required></div>
-                <div class="detail"><p class="detail-title">In stock</p><input name="instock" type="text" placeholder="Available products" required></div>
+                <div class="detail"><p class="detail-title">In stock</p><input name="instock" type="number" placeholder="Available products" required min=0></div>
                 <p><button type="submit">Add product</button></p>
             </form>
         </div>
