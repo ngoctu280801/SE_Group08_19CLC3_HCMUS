@@ -85,8 +85,8 @@
                                     echo '<p>Not Found any product</p>';
                                 }
                             ?>                               
+                                </div>
                             </div>
-                    </div>
 
                     <h4>Shop:</h4>
                     <?php 
@@ -120,19 +120,18 @@
                                                 <h4><a class="product_name" href="Shop/<?= $shop[$i]['id'] ?>"><?= $shop[$i]['name'] ?></a></h4>
                                                 <p class="card-text phonenum"><u>Phone number: <?= $shop[$i]['phonenum'] ?></u></p>
                                                 <p class="card-text addr">Address: <?= $shop[$i]['addr'] ?></p>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- single-product-wrap end -->
                                 </div>
                             
-                            <?php } ?>
-                            <?php }
-                                else{
-                                    echo '<p>Not Found any shop</p>';
-                                }
-                            ?>                               
+                    <?php }
+                    }
+                        else{
+                            echo '<p>Not Found any shop</p>';
+                        }
+                    ?>                               
                         </div>
                     </div>
                     <!-- Li's Section Area End Here -->
