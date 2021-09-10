@@ -30,6 +30,10 @@
                                             <li><a href="<?= base_url(); ?>Home/toLogin">Sign In</a></li>
                                         <?php
                                         }
+                                        else if($_SESSION['id_user'] == 'admin'){?>
+                                            <li><a href="<?= base_url(); ?>LoginAdm/SignOut">Sign Out</a></li>
+                                        <?php
+                                        }
                                         else
                                         {?>
                                             <li><a href="<?= base_url(); ?>Home/ManageAccount">My Account</a></li>

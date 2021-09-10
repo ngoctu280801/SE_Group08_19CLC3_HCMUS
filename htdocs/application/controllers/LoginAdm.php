@@ -22,12 +22,13 @@ class LoginAdm extends CI_Controller {
 		
 		if($this->loginAdm_model->ValidateLogin($user, $pass)){
 			$sessionAdmin = array(
-				'admin' => '1',
-				'permission' => '1'
+				'username' => 'admin',
+				'id_user' => 'admin',
+				'permission_user' => '1'
 			);
 		
 			$this->session->set_userdata( $sessionAdmin );
-			redirect('../','refresh');
+			redirect('Home/','refresh');
 		}
 		else{
 			redirect('/loginAdm','refresh');
@@ -37,8 +38,9 @@ class LoginAdm extends CI_Controller {
 
 	public function SignOut()
 	{
-		$this->session->unset_userdata('admin');
-		$this->session->unset_userdata('permission');
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('id_user');
+		$this->session->unset_userdata('permission_user');
 		redirect('/loginAdm','refresh');
 	}
 }
