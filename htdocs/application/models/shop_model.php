@@ -8,6 +8,12 @@ class shop_model extends CI_Model {
 		
 	}
 
+	public function getAllShopID()
+	{
+		$result = $this->db->query("select id from user where permission = '2'");
+		return $result->result_array();
+	}
+
 	public function SearchShop($name)
 	{
 		// Ket noi database

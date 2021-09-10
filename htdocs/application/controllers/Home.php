@@ -9,7 +9,38 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('BestGear_view');
+		$id = array();
+		$this->load->model('shop_model');
+		$id = $this->shop_model->getAllShopID();
+
+		// Chon random shop
+		$k = array_rand($id);
+		$rand_shop = $id[$k];
+
+		// Thong tin Shop
+		$this->load->model('manage_acc_model');
+		$info = $this->manage_acc_model->GetInfoDetail($rand_shop['id']);
+		if( (! $info) || $info[0]['permission'] != '2'){
+			$this->load->view('not_found_view');
+			return;
+		}
+
+		// Hang cua shop
+		$this->load->model('product_model');
+		$info_product = array();
+		$info_product = $this->product_model->GetAllProduct($rand_shop['id']);
+		$img_thumb = array();
+
+		if ($info_product){
+			foreach ($info_product as $value) {
+				$filename = $this->product_model->GetImgProduct($value['avt']);
+				$path = pathinfo('uploads/'.$filename);
+				$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
+			}
+		}
+
+		$data = array('info' => $info, 'info_product' => $info_product, 'img' => $img_thumb);
+		$this->load->view('BestGear_view', $data, FALSE);
 	}
 
 	function aboutUs()
