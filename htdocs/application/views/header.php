@@ -215,20 +215,8 @@
                     <div class="hb-menu">
                         <nav>
                             <ul>
-                                <a class ="home" href="<?= base_url(); ?>Home">Home</a>
-                                <li class="catmenu-dropdown megamenu-holder"><a>Shop</a>
-                                    <ul class="megamenu hb-megamenu">
-                                        <li><a>Shop List</a>
-                                            <ul>
-                                                <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                    </ul>
-                                </li>
-                                
+                                <a class ="home" href="<?= base_url(); ?>Home">Home</a>                                
                                 <li><a href="<?php echo base_url(); ?>Home/aboutUs">About Us</a></li>
-                                <li><a href="contact.html">Contact</a></li>
                                 <?php
                                 if($this->session->userdata('permission_user') == '2'){ ?>
                                     <li><a href="<?php echo base_url(); ?>Home/ManageProduct">Shop Management</a></li>

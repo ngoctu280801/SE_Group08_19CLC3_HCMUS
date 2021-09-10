@@ -72,24 +72,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-logo">
                         <img src="<?php echo base_url(); ?>images/menu/logo/1.jpg" alt="Footer Logo">
-                        <p class="info">
-                            We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
-                        </p>
                     </div>
-                    <ul class="des">
-                        <li>
-                            <span>Address: </span>
-                            6688Princess Road, London, Greater London BAS 23JK, UK
-                        </li>
-                        <li>
-                            <span>Phone: </span>
-                            <a href="#">(+123) 123 321 345</a>
-                        </li>
-                        <li>
-                            <span>Email: </span>
-                            <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
-                        </li>
-                    </ul>
                 </div>
                 <!-- Footer Logo Area End Here -->
                 <!-- Begin Footer Block Area -->

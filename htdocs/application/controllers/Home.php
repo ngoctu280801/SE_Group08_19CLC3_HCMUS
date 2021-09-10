@@ -14,6 +14,7 @@ class Home extends CI_Controller {
 		$id = $this->shop_model->getAllShopID();
 
 		// Chon random shop
+		do{
 		$k = array_rand($id);
 		$rand_shop = $id[$k];
 
@@ -38,6 +39,7 @@ class Home extends CI_Controller {
 				$img_thumb[] = $path['filename'].'_thumb.'.$path['extension'];
 			}
 		}
+		} while(!$info_product); // Ko chon shop ko co hang
 
 		$data = array('info' => $info, 'info_product' => $info_product, 'img' => $img_thumb);
 		$this->load->view('BestGear_view', $data, FALSE);

@@ -53,8 +53,7 @@
                                     <div class="slider-progress"></div>
                                     <div class="slider-content">
                                         <h5>Sale Offer <span>-20% Off</span> This Week</h5>
-                                        <h2>Chamcham Galaxy S9 | S9+</h2>
-                                        <h3>Starting at <span>11000000 VNĐ</span></h3>
+                                        <h3>Starting at <span>18500000</span>VNĐ</h3>
                                         <div class="default-btn slide-btn">
                                             <a class="links" href="#">Shopping Now</a>
                                         </div>
