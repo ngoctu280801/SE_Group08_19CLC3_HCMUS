@@ -52,10 +52,10 @@
                                 <div class="single-slide align-center-left animation-style-02 bg-4">
                                     <div class="slider-progress"></div>
                                     <div class="slider-content">
-                                        <h5>Sale Offer <span>-20% Off</span> This Week</h5>
-                                        <h3>Starting at <span>18500000</span>VNĐ</h3>
+                                        <h5>Sale Offer <span>-5% Off</span> This Week</h5>
+                                        <h3>Starting at <span>25000000</span>VNĐ</h3>
                                         <div class="default-btn slide-btn">
-                                            <a class="links" href="#">Shopping Now</a>
+                                            <a class="links" href="<?= base_url()?>Home/Product/18">Shopping Now</a>
                                         </div>
                                     </div>
                                 </div>

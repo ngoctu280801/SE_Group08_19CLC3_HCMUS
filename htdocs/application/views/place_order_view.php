@@ -22,7 +22,7 @@
             <div class="container">
                 <div class="breadcrumb-content">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="<?= base_url(); ?>Home">Home</a></li>
                         <li class="active">Order Placed Successfully</li>
                     </ul>
                 </div>

@@ -181,7 +181,7 @@
                             <?php
                             if($this->session->userdata('permission_user') == '1'){ ?>
                                 <li class="hm-wishlist">
-                                    <a href="wishlist.html">
+                                    <a href="#">
                                         <span class="cart-item-count wishlist-item-count">0</span>
                                         <i class="fa fa-heart-o"></i>
                                     </a>
